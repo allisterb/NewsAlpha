@@ -10,13 +10,10 @@ open Microsoft.AspNetCore.Http;
 open Microsoft.Extensions.Logging;
 open Newtonsoft.Json;
 
-open Microsoft.Azure.WebJobs
-open Microsoft.AspNetCore.Http
-open Microsoft.AspNetCore.Mvc
-
 module HelloYou =
     [<FunctionName("HelloYou")>]
-    let run
-        ([<HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "hello")>]
-        req: HttpRequest) =
-            ContentResult(Content = "oo", ContentType = "text/html")
+    let run([<HttpTrigger(AuthorizationLevel.Function, "get", Route = "hello")>]req: HttpRequest, log: ILogger) =
+        async {    
+            return ContentResult(Content = "oo", ContentType = "text/html")
+        } |> Async.StartAsTask
+        
