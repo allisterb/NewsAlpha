@@ -1,4 +1,14 @@
 {
+  "files.exclude": 
+  {
+	"**/*.bak": true,
+	"**/*.bat": true,
+	"**/*.flf": true,
+	"**/*.git*": true,
+	"**/*.st*": true,
+	"**/bin/": true,
+	"**/obj/": true
+  },
   "azureFunctions.projectRuntime": "~2",
   "azureFunctions.projectLanguage": "C#",
   "azureFunctions.deploySubpath": "bin/Release/netcoreapp2.1/publish",
